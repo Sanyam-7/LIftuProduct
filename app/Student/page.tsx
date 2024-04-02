@@ -1,10 +1,9 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import Sidebar from "@/app/components/student/Sidebar"
-import Sidebar1 from "@/app/components/student/Sidebar1";
-import Content from "@/app/components/student/Content";
-import Profile from "@/app/components/student/Profile";
-
+import Content from "../components/student/Content";
+import Sidebar from "../components/student/Sidebar";
+import Profile from "../components/student/Profile";
+import Sidebar1 from "../components/student/Sidebar1";
 const Page: React.FC = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
 
@@ -14,9 +13,13 @@ const Page: React.FC = () => {
 
   return (
     <div className="flex">
-        {isSidebarVisible ? <Sidebar /> : <Sidebar1 toggleSidebar={toggleSidebar} />}
-        <Content></Content>
-        <Profile></Profile>
+      {isSidebarVisible ? (
+        <Sidebar />
+      ) : (
+        <Sidebar1 toggleSidebar={toggleSidebar} />
+      )}
+      <Content></Content>
+      <Profile></Profile>
     </div>
   );
 };
